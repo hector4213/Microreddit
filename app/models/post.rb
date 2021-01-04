@@ -1,3 +1,3 @@
 class Post < ApplicationRecord
-    validates :url, presence: true, length: { minimum: 6 }
+    # validates :url, presence: true, length: { minimum: 6 }
 end

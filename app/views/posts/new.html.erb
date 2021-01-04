@@ -1,16 +1,24 @@
 <h1> New Post </h1>
-
 <%= form_with model: @post do |form| %>
-    <div>
-        <%= form.label :url %>
-            <%= form.text_field :url %>
-                <%= @post.errors.full_messages_for(:url).each do |message| %>
-                    <div>
-                        <%= message %>
-                    </div>
-                    <% end %>
-    </div>
-    <div>
-        <%= form.submit %>
-    </div>
+  <div>
+    <%= form.label :title %><br>
+    <%= form.text_area :title %>
+    <%= @post.errors.full_messages_for(:title).each do |message| %>
+      <div>
+        <%= message %>
+      </div>
+    <%end%>
+  </div>
+  <div>
+    <%= form.label :url %>
+    <%= form.text_field :url %>
+    <%= @post.errors.full_messages_for(:url).each do |message| %>
+      <div>
+        <%= message %>
+      </div>
     <% end %>
+  </div>
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>
