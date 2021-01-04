@@ -1,3 +1,5 @@
+
+
 class PostsController < ApplicationController
   def index
     @posts = Post.all
@@ -13,7 +15,6 @@ class PostsController < ApplicationController
 
   def create
     @post = Post.new(post_params)
-
     if @post.save
       redirect_to @post
     else
@@ -24,6 +25,7 @@ class PostsController < ApplicationController
   private
 
   # Only allow user to enter title and url for post
+
   def post_params
     params.require(:post).permit(:title, :url)
   end
