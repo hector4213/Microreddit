@@ -1,5 +1,23 @@
-<h1><%= @post.title %> </h1>
-<p><%= @post.url %></p>
-<li><%= link_to "Delete Post", post_path(@post),
+<div>
+  <h1><%= @post.title %> </h1>
+  <p><%= @post.url %></p>
+  <li><%= link_to "Delete Post", post_path(@post),
                   method: :delete,
                   data: { confirm: "Are you sure?" } %></li>
+</div>
+<div>
+  <h2> Add comment to post </h2>
+  <%= form_with model: [ @post, @post.comments.build ] do |form| %>
+    <p>
+      <%= form.label :user %>
+      <%= form.text_field :user%>
+    </p>
+    <p>
+      <%= form.label :body %>
+      <%= form.text_field :body %>
+    </p>
+    <p>
+      <%= form.submit %>
+    </p>
+  <% end %>
+</div>
