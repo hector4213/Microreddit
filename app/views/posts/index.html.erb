@@ -1,9 +1,12 @@
 <h1>Reddit Posts</h1>
+<div>
+  <%= link_to "New Post", new_post_path%>
+</div>
 <ul>
-    <% @posts.each do |post| %>
+  <% @posts.each do |post| %>
     <li>
-        <%= link_to post.title, post %>
-        <%= post.url %>
+      <%= link_to post.title, post %>
+      <%= post.url %>
     </li>
-    <% end %>
+  <% end %>
 </ul>
