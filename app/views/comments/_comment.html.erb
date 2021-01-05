@@ -7,9 +7,4 @@
     <em>Posted by:</em>
     <%= comment.user %>
   </p>
-  <p>
-    <%= link to "Delete", [comment.article, comment],
-                method: :delete,
-                data: {confirm: "Are you sure?"} %>
-  </p>
 <% end %>
