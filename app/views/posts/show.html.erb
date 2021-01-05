@@ -1,2 +1,5 @@
 <h1><%= @post.title %> </h1>
 <p><%= @post.url %></p>
+<li><%= link_to "Delete Post", post_path(@post),
+                  method: :delete,
+                  data: { confirm: "Are you sure?" } %></li>
