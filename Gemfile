@@ -11,7 +11,7 @@ gem 'jquery-rails'
 
 gem 'mini_racer'
 
-gem 'bcrypt-ruby', '~> 3.0.0'
+gem 'bcrypt', '~> 3.1.2'
 
 gem 'sqlite3', '~> 1.4'
 
