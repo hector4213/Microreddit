@@ -1,15 +1,13 @@
 class ApplicationController < ActionController::Base
+  include SessionsHelper
 
+  private
 
-
-    private
-
-    def current_user
-        @current_user ||= User.find(session[:user_id]) if session[:user_id]
+  def logged_in_user
+    unless logged_in?
+      store_location
+      flash[:danger] = "Please Log in."
     end
-helper_method :current_user
+  end
 
-    def authorize
-  redirect_to login_url, alert: "Not authorized" if current_user.nil?
-    end
 end
