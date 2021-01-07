@@ -15,6 +15,7 @@ class PostsController < ApplicationController
 
   def create
     @post = Post.new(post_params)
+    @post.user_id = current_user.id #this line is where user is added
     if @post.save
       redirect_to @post
     else
