@@ -34,6 +34,6 @@ class PostsController < ApplicationController
   # Only allow user to enter title and url for post
 
   def post_params
-    params.require(:post).permit(:title, :url)
+    params.require(:post).permit(:title, :url, :user_id)
   end
 end
