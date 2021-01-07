@@ -1,5 +1,5 @@
 class PostsController < ApplicationController
-  before_action :authorize, only: [:edit, :update]
+  before_action :logged_in_user
 
   def index
     @posts = Post.all
