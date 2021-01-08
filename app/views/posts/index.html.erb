@@ -16,7 +16,7 @@
     </span>
       <%= link_to post.title, post %>
       <%= post.url %>
-      <p >Posted <%= time_ago_in_words(post.created_at) %> ago by <%= post.user.username %></p>
+      <p >Posted <%= time_ago_in_words(post.created_at) %> ago by <%= post.user.username %> <%= link_to("#{post.comments.size} comments", post_path(post)) %></p>
     </li>
   <% end %>
 </ul>
