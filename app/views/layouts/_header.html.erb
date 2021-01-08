@@ -5,8 +5,8 @@
     </div>
     <% if logged_in? %>
       <ul class="nav navbar-right ">
-        <li><%= link_to "Log out", logout_path, class: "mx-2", method: :delete %></li>
-        <li><%= link_to "Profile", user_path(current_user.id), class: "mx-2" %></li>  
+      <li><%= link_to "Profile", user_path(current_user.id), class: "btn btn-primary btn-sm" %></li>  
+        <li><%= link_to "Log out", logout_path, class: "btn btn-danger btn-sm", method: :delete %></li>
       </ul>
     <% else %>
       <ul class="nav navbar-right ">
