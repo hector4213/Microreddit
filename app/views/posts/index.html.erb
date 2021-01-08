@@ -6,6 +6,14 @@
 <ul class="list-group">
   <% @posts.each do |post| %>
     <li class="list-group-item list-group-item-primary">
+    <span class="d-inline-flex flex-column align-items-center justify-content-center">
+    <%= link_to vote_post_path(post, vote: true), method: 'post', remote: true do %>
+    <i class="fas fa-sort-up"></i>
+    <%end%>
+    <%= link_to vote_post_path(post, vote: false), method: 'post', remote: true do %>
+    <i class="fas fa-sort-down"></i>
+    <%end%>
+    </span>
       <%= link_to post.title, post %>
       <%= post.url %>
       <p >Posted <%= time_ago_in_words(post.created_at) %> ago by <%= post.user.username %></p>
