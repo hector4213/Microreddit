@@ -1,9 +1,4 @@
 <%= form_with model: [ @post, @post.comments.build ] do |form| %>
-  <p>
-    <%= form.label :user %>
-    <%= form.text_field :user%>
-  </p>
-  <p>
     <%= form.label :body %>
     <%= form.text_field :body %>
   </p>
