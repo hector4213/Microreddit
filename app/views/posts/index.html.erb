@@ -2,13 +2,13 @@
 <div>
   <%= link_to "New Post", new_post_path%>
 </div>
-<ul>
+
+<ul class="list-group">
   <% @posts.each do |post| %>
-    <li>
+    <li class="list-group-item list-group-item-primary">
       <%= link_to post.title, post %>
       <%= post.url %>
-      <p >Posted <%= time_ago_in_words(post.created_at) %> ago</p>
-      <%= post.user.username%>
+      <p >Posted <%= time_ago_in_words(post.created_at) %> ago by <%= post.user.username %></p>
     </li>
   <% end %>
 </ul>
