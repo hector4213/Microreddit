@@ -1,7 +1,7 @@
 <%= form_with model: @post do |form| %>
-  <div>
-    <%= form.label :title %><br>
-    <%= form.text_area :title %>
+  <div class="mb-3">
+    <%= form.label :title, class:'form-label' %><br>
+    <%= form.text_field :title, class: "form-control" %>
     <%= @post.errors.full_messages_for(:title).each do |message| %>
       <div>
         <%= message %>
@@ -9,8 +9,8 @@
     <%end%>
   </div>
   <div>
-    <%= form.label :url %>
-    <%= form.text_field :url %>
+    <%= form.label :url, class: 'form-label' %>
+    <%= form.text_field :url, class: 'form-control' %>
     <%= @post.errors.full_messages_for(:url).each do |message| %>
       <div>
         <%= message %>
