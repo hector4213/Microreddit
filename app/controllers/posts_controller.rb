@@ -29,6 +29,12 @@ class PostsController < ApplicationController
     redirect_to root_path
   end
 
+  ## method to create new vote for a post
+  def vote
+    @post = Post.find(params[:id])
+    vote = Vote.create(post_id: @post, user_id: current_user, vote: params[:vote])
+  end
+
   private
 
   # Only allow user to enter title and url for post
