@@ -12,8 +12,9 @@ class UsersController < ApplicationController
   def create
     @user = User.new(user_params)
     if @user.save
+      log_in @user # line to log user in after account creation
       flash[:success] = 'Thanks for registering!'
-      redirect_to root_path
+      redirect_to posts_path
     else
       render :new
     end
