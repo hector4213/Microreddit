@@ -22,13 +22,21 @@ module SessionsHelper
     user == current_user
   end
 
+  def redirect_back_or(default)
+    redirect_to(session[:forwarding_url] || default)
+    session.delete(:forwarding_url)
+  end
+
+  def store_location
+    session[:forwarding_url] = request.original_url if request.get?
+  end
+
 
   private
   def logged_in_user
       unless logged_in?
         store_location
-        flash[:danger] = "Please log in."
-        redirect_to login_url
+        flash[:danger] = "Please log in to post some content."
       end
   end
 end

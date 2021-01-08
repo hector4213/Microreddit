@@ -10,6 +10,7 @@
     <%= link_to vote_post_path(post, vote: true), method: 'post', remote: true do %>
     <i class="fas fa-sort-up"></i>
     <%end%>
+    <%= post.votes.size %>
     <%= link_to vote_post_path(post, vote: false), method: 'post', remote: true do %>
     <i class="fas fa-sort-down"></i>
     <%end%>
