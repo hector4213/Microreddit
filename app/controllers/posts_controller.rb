@@ -32,8 +32,15 @@ class PostsController < ApplicationController
   ## method to create new vote for a post
   def vote
     @post = Post.find(params[:id])
-    vote = Vote.create(post_id: @post.id, user_id: current_user.id, vote: params[:vote])
-    vote.save
+    ## find and check if vote exists
+    vote = Vote.find_by(post_id: @post.id, user_id: current_user.id)
+    if vote
+      vote.update(vote: params[:vote])
+      flash[:notice] = "Voted!"
+    else
+     Vote.create(post_id: @post.id, user_id: current_user.id, vote: params[:vote])
+    flash[:notice] = "Thanks for your new vote!"
+    end
   end
 
   private
