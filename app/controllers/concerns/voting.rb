@@ -1,5 +1,6 @@
 module PostsHelper
   extend ActiveSupport::Concern
+  #concerns are for DRYing code, used in controllers as methods, helpers are for views.
   #self is like this in js, wew
  
   def vote_points
