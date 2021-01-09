@@ -10,21 +10,24 @@
   </head>
   <body>
     <%= render 'layouts/header' %>
-          <% flash.each do |message_type, message| %>
-        <div class="alert alert-<%= message_type %>"><%= message %></div>
-      <% end %>
-  <div class='container'>
+    <% if notice %>
+      <p class="alert alert-success"><%= notice %></p>
+    <% end %>
+    <% if alert %>
+      <p class="alert alert-danger"><%= alert %></p>
+    <% end %>
+    <div class='container'>
       <div class="row">
-      <div class="col-9">
-        <%= yield %>
+        <div class="col-9">
+          <%= yield %>
+        </div>
+        <div class='col'>
+          <% if current_user %>
+            <%= link_to root_path %>
+          <% else %>
+            <%= render template: 'sessions/new' %>
+          <%end%>
+        </div>
       </div>
-      <div class='col'> 
-      <% if current_user %>
-       <%= link_to root_path %>
-        <% else %>
-         <%= render template: 'sessions/new' %>
-        <%end%>
-      </div>
-    </div>
-  </body>
-</html>
+    </body>
+  </html>
