@@ -1,4 +1,4 @@
-module PostsHelper
+module Voting
   extend ActiveSupport::Concern
   #concerns are for DRYing code, used in controllers as methods, helpers are for views.
   #self is like this in js, wew
