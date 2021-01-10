@@ -1,4 +1,4 @@
-# Micro reddit :arrow_up_small:
+# Micro reddit :arrow_up_small:  :arrow_down_small: 
 
 A minaturized version of reddit on rails.
 
