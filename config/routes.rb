@@ -6,7 +6,7 @@ Rails.application.routes.draw do
   delete '/logout',  to: 'sessions#destroy'
   get '/signup', to: 'users#new'
 
-  resources :users
+  
 
 # https://guides.rubyonrails.org/routing.html#adding-member-routes
 # This is a bit weird
@@ -17,4 +17,5 @@ Rails.application.routes.draw do
     end
     resources :comments
   end
+  resources :users
 end
