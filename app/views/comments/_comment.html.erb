@@ -1,13 +1,23 @@
-<p>
-  <strong>Comment:</strong>
-  <%= comment.body%>
-</p>
-<p>
-  <em>Posted by:</em>
-  <%= comment.user.username %>
-</p>
-<p>
-  <%= link_to 'Delete', [comment.post, comment],
+<div class="list-group">
+  <div class="list-group-item">
+    <div class="d-flex align-items-center ">
+      <div class='d-flex flex-column p-2'>
+        <i class="fas fa-sort-up"></i>
+        <i class="fas fa-sort-down"></i>
+      </div>
+      <p class="font-weight-bold mb-0">
+        Posted by: <%= comment.user.username %>
+      </p>
+    </div>
+    <div class="p-2">
+      <p>
+        <%= comment.body%>
+      </p>
+      <p>
+        <%= link_to 'Delete', [comment.post, comment], class: "btn btn-danger",
                method: :delete,
                data: { confirm: "Are you sure?" } %>
-</p>
+      </p>
+    </div>
+  </div>
+</div>
