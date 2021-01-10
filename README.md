@@ -2,6 +2,18 @@
 
 A minaturized version of reddit on rails.
 
+## Table of contents
+
+- [Table of contents](#table-of-contents)
+  - [Features](#features)
+  - [Tech](#technologies-used)
+  - [Deployment](#deployment)
+  - [ERD](#entity-relationship-diagram)
+
+
+---
+
+
 ## Features
 
 Thanks to the simplicity and magic of Ruby on Rails, users of Micro reddit can:
@@ -22,7 +34,7 @@ Users of Micro reddit have:
 
 - Profiles show total posts made and total points for their posts.
 
-## Built with
+## Technologies Used
 
 [<img src='https://github.com/hector4213/hector4213/blob/main/icons/ruby.png' height='100'>]() [<img src='https://github.com/hector4213/hector4213/blob/main/icons/rails.png' height='100'>]() [<img src='https://img.icons8.com/color/344/postgreesql.png' height='100'>]() [<img src='https://img.icons8.com/color/344/javascript.png' height='100'>]() [<img src='https://img.icons8.com/color/344/bootstrap.png' height='100'>]()
 
