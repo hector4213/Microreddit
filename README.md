@@ -1,2 +1,40 @@
-# Micro-reddit
+# Micro reddit :arrow_up_small:
 
+## About the project
+A minaturized version of reddit on rails.
+
+## Features
+
+Thanks to the simplicity and magic of Ruby on Rails, users of Micro reddit can:
+
+- Register and login
+
+- Create, Read, Update or Delete their posts
+
+- Create, Read, Update or Delete their comments
+
+- Posts as well as comments can be upvoted
+
+Users of Micro reddit have:
+
+- Profiles they can update
+
+- Profiles show total posts made and total points for their posts.
+
+## Built with
+
+[<img src='https://github.com/hector4213/hector4213/blob/main/icons/ruby.png' height='100'>]() [<img src='https://github.com/hector4213/hector4213/blob/main/icons/rails.png' height='100'>]() [<img src='https://img.icons8.com/color/344/postgreesql.png' height='100'>]() [<img src='https://img.icons8.com/color/344/javascript.png' height='100'>]() [<img src='https://img.icons8.com/color/344/bootstrap.png' height='100'>]()
+
+
+## Entity Relationship Diagram
+
+By default Rails ships with SQLite3, personal preference made me change the dialect to postgres
+
+## Deployment
+
+[<img src='https://img.icons8.com/nolan/344/heroku.png' height='100'>]()
+
+
+<p align="center">
+<img src='/images/microerd.png' />
+ </p>
