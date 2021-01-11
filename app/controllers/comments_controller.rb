@@ -11,8 +11,12 @@ class CommentsController < ApplicationController
 
     def vote
         @comment = Comment.find(params[:id])
-        vote = Vote.create(post_id: @comment, user_id: current_user.id, vote: params[:vote])
-        #do later
+       vote = Vote.find_by(voteable: @comment, user_id: current_user.id)
+       if vote
+        vote.update(params[:vote])
+       else
+        vote = Vote.create(voteable: @comment, user_id: current_user.id, vote: params[:vote])
+       end
     end
 
     def destroy
