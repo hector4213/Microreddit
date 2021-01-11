@@ -10,7 +10,7 @@
         <%end%>
       </div>
       <p class="font-weight-bold mb-0">
-        Posted by: <%= comment.user.username %>
+        Posted by: <%= comment.user.username %> <span><%= comment.vote_points %> points</span> <span><%= time_ago_in_words(comment.created_at) %></span>
       </p>
     </div>
     <div class="p-2">
