@@ -1,6 +1,5 @@
 class Vote < ApplicationRecord
   belongs_to :user
-  belongs_to :post
   belongs_to :voteable, polymorphic: true
 
   #https://stackoverflow.com/questions/923796/how-do-you-validate-uniqueness-of-a-pair-of-ids-in-ruby-on-rails
