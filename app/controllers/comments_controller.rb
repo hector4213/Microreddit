@@ -13,7 +13,7 @@ class CommentsController < ApplicationController
         @comment = Comment.find(params[:id])
        vote = Vote.find_by(voteable: @comment, user_id: current_user.id)
        if vote
-        vote.update(params[:vote])
+        vote.update(vote: params[:vote])
        else
         vote = Vote.create(voteable: @comment, user_id: current_user.id, vote: params[:vote])
        end
