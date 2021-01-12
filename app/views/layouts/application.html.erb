@@ -18,12 +18,19 @@
     <% end %>
     <div class='container'>
       <div class="row">
-        <div class="col-9">
+        <div class="col-10">
+          <%= render 'layouts/nav' %>
           <%= yield %>
         </div>
-        <div class='col'>
+        <div class='col d-flex flex-column align-items'>
+          <form class="d-flex">
+            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+            <button class="btn btn-outline-success" type="submit">Search</button>
+          </form>
           <% if current_user %>
-            <%= link_to root_path %>
+            <div>
+              <%= link_to "New Post", new_post_path%>
+            </div>
           <% else %>
             <%= render template: 'sessions/new' %>
           <%end%>
