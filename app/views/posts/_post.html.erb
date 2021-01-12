@@ -1,0 +1,19 @@
+    
+<div class="list-group-item list-group-item-primary d-flex align-items-center">
+  <div class="d-flex flex-column me-4">
+    <%= link_to vote_post_path(post, vote: true), method: 'post', remote: true do %>
+      <i class="fas fa-sort-up"></i>
+    <%end%>
+    <%= post.vote_points %>
+    <%= link_to vote_post_path(post, vote: false), method: 'post', remote: true do %>
+      <i class="fas fa-sort-down"></i>
+    <%end%>
+  </div>
+  <div>
+    <%= link_to post.title, post %>
+    <small>
+      <%= URI.parse(post.url).host %>
+    </small>
+    <p class="m-0" >Posted <%= time_ago_in_words(post.created_at) %> ago by <%= post.user.username %> <%= link_to("#{post.comments.size} comments", post_path(post)) %></p>
+  </div>
+</div>
