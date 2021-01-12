@@ -1,16 +1,15 @@
-<nav class="navbar mb-2">
+<nav class="navbar navbar-expand-lg">
   <div class="container-fluid">
     <div class="navbar-header">
-      <%= link_to "Posts", root_path, class: "mx-2" %>
+      <%= link_to "Micro Reddit", root_path, class: "navbar-brand" %>
     </div>
     <% if logged_in? %>
-      <ul class="nav navbar-right ">
-      <li><%= link_to "Profile", user_path(current_user.id), class: "btn btn-primary btn-sm" %></li>  
+      <div class="nav navbar-right ">
+        <li><%= link_to "Profile", user_path(current_user.id), class: "btn btn-primary btn-sm" %></li>
         <li><%= link_to "Log out", logout_path, class: "btn btn-danger btn-sm", method: :delete %></li>
-      </ul>
+      </div>
     <% else %>
       <ul class="nav navbar-right ">
-        <li><%= link_to "Log in", login_path, class: "mx-2" %></li> 
         <li><%= link_to "Sign up", signup_path, class: "mx-2" %></li>
       </ul>
     <% end %>
