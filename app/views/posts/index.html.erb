@@ -1,24 +1,5 @@
-<h1>Reddit Posts</h1>
-<div>
-  <%= link_to "New Post", new_post_path%>
-</div>
-
-<ul class="list-group">
+<div class="list-group">
   <% @posts.each do |post| %>
-    <li class="list-group-item list-group-item-primary">
-    <span class="d-inline-flex flex-column align-items-center justify-content-center">
-    <%= link_to vote_post_path(post, vote: true), method: 'post', remote: true do %>
-    <i class="fas fa-sort-up"></i>
-    <%end%>
-    <%= post.vote_points %>
-    <%= link_to vote_post_path(post, vote: false), method: 'post', remote: true do %>
-    <i class="fas fa-sort-down"></i>
-    <%end%>
-    </span>
-      <%= link_to post.title, post %>
-      <%= post.url %>
-      <p >Posted <%= time_ago_in_words(post.created_at) %> ago by <%= post.user.username %> <%= link_to("#{post.comments.size} comments", post_path(post)) %></p>
-    </li>
+    <%= render 'post', post: post %>
   <% end %>
-</ul>
- 
+</div>
