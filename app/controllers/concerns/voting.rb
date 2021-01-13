@@ -4,9 +4,6 @@ module Voting
   #self is like this in js, wew
  
   #now both votes and comments have votables relationships (polymorphic)
-  included do
-    has_many :votes, as: :voteable
-  end
 
   def vote_points
    up_votes - down_votes
