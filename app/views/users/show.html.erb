@@ -1,11 +1,18 @@
-
-<div class="row">
-  <div class="offset-4 col-md-4">
-      <h3 class='text-center'>
-        <%= @user.username %>
-      </h3>
-      <h3 class='text-center'>
-        <%= @user.email %>
-      </h3>
-  </div>
+<div class="container d-flex flex-column space-around">
+  <h3>
+    <%= @user.username %>
+  </h3>
+  <hr/>
+  <h6>Total Points: 
+    <mark><%= @user.vote_points.to_s%></mark>
+  </h6>
+  <h6>Total Posts: 
+    <mark><%= @user.posts.size%></mark>
+  </h6>
+  <h6>Total Posts: 
+    <mark><%= @user.posts.size%></mark>
+  </h6>
+  <h6>Member Since: 
+    <mark><%= @user.created_at.strftime("%B #{@user.created_at.day.ordinalize}, %Y") %></mark>
+  </h6>
 </div>
