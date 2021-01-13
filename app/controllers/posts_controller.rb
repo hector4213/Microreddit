@@ -3,9 +3,20 @@ class PostsController < ApplicationController
   before_action :set_post, only: [:show, :vote]
 
   def index
-    @posts = Post.all
+    if params[:sort] == "recent"
+    @posts = Post.order(created_at: :desc)
+    elsif
+      params[:sort] == "top"
+      @posts = Post.all.sort { |a, b| b.vote_points <=> a.vote_points  }
+    elsif 
+      params[:sort] == "hot"
+      @posts = Post.all.order(created_at: :desc).sort { |a, b| b.vote_points <=> a.vote_points  }
+    else
+      @posts = Post.all.order(created_at: :asc).sort { |a, b| b.vote_points <=> a.vote_points  }
+    end
   end
 
+  
   def show
     @post = Post.find(params[:id])
   end
@@ -43,6 +54,7 @@ class PostsController < ApplicationController
     flash[:notice] = "Thanks for your new vote!"
     end
   end
+
 
   private
 
