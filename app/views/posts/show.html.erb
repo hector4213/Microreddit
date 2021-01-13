@@ -5,7 +5,7 @@
 <%= link_to vote_post_path(@post, vote: false), method: 'post', remote: true do %>
   <i class="fas fa-sort-down"></i>
 <%end%>
-<%= link_to @post.title  %>
+<%= link_to @post.title, @post.url  %>
 </span>
 <p >Posted <%= time_ago_in_words(@post.created_at) %> ago by <%= @post.user.username %> <%= link_to("#{@post.comments.size} comments", post_path(@post)) %></p>
 </li>
