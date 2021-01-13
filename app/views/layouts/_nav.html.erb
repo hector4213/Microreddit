@@ -1,11 +1,11 @@
 <ul class="nav">
   <li class="nav-item">
-    <a class="nav-link" href="#">Hot</a>
+    <%= link_to 'Hot', {controller: "posts", sort: 'hot'}, class: "nav-link" %>
   </li>
   <li class="nav-item">
-    <a class="nav-link" href="#">Top</a>
+    <%= link_to 'Top', {controller: "posts", sort: 'top'}, class: "nav-link" %>
   </li>
   <li class="nav-item">
-    <a class="nav-link" href="#" >New</a>
+    <%= link_to 'New', {controller: "posts", sort: 'recent'}, class: "nav-link" %>
   </li>
 </ul>
