@@ -1,4 +1,5 @@
 class User < ApplicationRecord
+  include Voting
   has_many :posts
   has_many :comments
   has_many :votes
