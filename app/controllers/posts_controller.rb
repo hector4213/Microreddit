@@ -46,12 +46,28 @@ class PostsController < ApplicationController
     @post = Post.find(params[:id])
     ## find and check if vote exists
     vote = Vote.find_by(voteable: @post, user_id: current_user.id)
-    if vote
-      vote.update(vote: params[:vote])
-      flash[:notice] = "Voted!"
-    else
-     Vote.create(voteable: @post, user_id: current_user.id, vote: params[:vote])
-    flash[:notice] = "Thanks for your new vote!"
+    respond_to do |format|
+      format.html do
+        if vote
+          vote.update(vote: params[:vote])
+          flash[:notice] = "Voted!"
+        else
+          Vote.create(voteable: @post, user_id: current_user.id, vote: params[:vote])
+         flash[:notice] = "Thanks for your new vote!"
+        end
+      end
+    end
+
+    format do
+      format.js do
+        if vote
+          vote.update(vote: params[:vote])
+          flash[:notice] = "Voted!"
+        else
+          Vote.create(voteable: @post, user_id: current_user.id, vote: params[:vote])
+         flash[:notice] = "Thanks for your new vote!"
+        end
+      end
     end
   end
 
