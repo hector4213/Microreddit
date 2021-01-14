@@ -1,11 +1,11 @@
-<ul class="nav">
-  <li class="nav-item">
-    <%= link_to 'Hot', {controller: "posts", sort: 'hot'}, class: "nav-link" %>
-  </li>
-  <li class="nav-item">
-    <%= link_to 'Top', {controller: "posts", sort: 'top'}, class: "nav-link" %>
-  </li>
-  <li class="nav-item">
-    <%= link_to 'New', {controller: "posts", sort: 'recent'}, class: "nav-link" %>
-  </li>
-</ul>
+<div class="sorter-header">
+  <%= link_to posts_path(sort: "hot"), class: "nes-badge" do %>
+    <span class="is-error">Hot</span>
+  <%end%>
+  <%= link_to posts_path(sort: "top"), class: "nes-badge" do %>
+    <span class="is-dark">Top</span>
+  <%end%>
+  <%= link_to posts_path(sort: "recent"), class: "nes-badge" do %>
+    <span class="is-success">New</span>
+  <%end%>
+</div>
