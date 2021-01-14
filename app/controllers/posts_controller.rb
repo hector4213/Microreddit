@@ -58,9 +58,7 @@ class PostsController < ApplicationController
          flash[:notice] = "Thanks for your new vote!"
         end
       end
-    end
 
-    format do
       format.js do
         if vote
           vote.update(vote: params[:vote])
