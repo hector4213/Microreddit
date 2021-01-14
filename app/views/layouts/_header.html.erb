@@ -1,17 +1,13 @@
-<nav class="navbar navbar-expand-lg">
-  <div class="container-fluid">
-    <div class="navbar-header">
-      <%= link_to "Micro Reddit", root_path, class: "navbar-brand" %>
-    </div>
+<nav class="nes-container nav-container">
+  <div class>
+    <%= link_to "Micro Reddit", root_path, class: "navbar-brand" %>
+  </div>
+  <div class="buttons-container">
     <% if logged_in? %>
-      <div class="nav navbar-right ">
-        <li><%= link_to "Profile", user_path(current_user.id), class: "btn btn-primary btn-sm" %></li>
-        <li><%= link_to "Log out", logout_path, class: "btn btn-danger btn-sm", method: :delete %></li>
-      </div>
+      <%= link_to "Profile", user_path(current_user.id), class: "nes-btn is-primary" %>
+      <%= link_to "Log out", logout_path, class: "nes-btn is-error", method: :delete %>
     <% else %>
-      <ul class="nav navbar-right ">
-        <li><%= link_to "Sign up", signup_path, class: "mx-2" %></li>
-      </ul>
+      <%= link_to "Sign up", signup_path, class: "nes-btn is-success" %>
     <% end %>
   </div>
 </nav>
