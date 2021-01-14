@@ -1,12 +1,13 @@
-    
 <div class="list-group-item list-group-item-primary d-flex align-items-center">
   <div class="d-flex flex-column me-4">
     <%= link_to vote_post_path(post, vote: true), method: 'post', remote: true do %>
       <i class="fas fa-sort-up"></i>
     <%end%>
-    <%= post.vote_points %>
+    <span id="post_<%= post.id %>">
+      <%= post.vote_points %>
+    </span>
     <%= link_to vote_post_path(post, vote: false), method: 'post', remote: true do %>
-      <i class="fas fa-sort-down"></i>
+      <i  class="fas fa-sort-down"></i>
     <%end%>
   </div>
   <div>
