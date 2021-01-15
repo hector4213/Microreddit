@@ -11,7 +11,7 @@
     <%end%>
   </div>
   <div class="post-title">
-    <%= link_to post.title, post %>
+    <%= link_to post.title, url_for(post.url) %>
     <small>
       <%= URI.parse(post.url).host %>
     </small>
