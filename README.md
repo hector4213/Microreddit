@@ -1,6 +1,6 @@
-# Micro reddit :arrow_up_small:  :arrow_down_small: 
+# Ninteddit 🎮  
 
-A minaturized version of reddit on rails.
+A minaturized version of reddit on rails, nintendo style.
 
 ## Table of contents
 
@@ -36,7 +36,7 @@ Users of Micro reddit have:
 
 ## Technologies Used
 
-[<img src='https://github.com/hector4213/hector4213/blob/main/icons/ruby.png' height='100'>]() [<img src='https://github.com/hector4213/hector4213/blob/main/icons/rails.png' height='100'>]() [<img src='https://img.icons8.com/color/344/postgreesql.png' height='100'>]() [<img src='https://img.icons8.com/color/344/javascript.png' height='100'>]() [<img src='https://img.icons8.com/color/344/bootstrap.png' height='100'>]()
+[<img src='https://github.com/hector4213/hector4213/blob/main/icons/ruby.png' height='100'>]() [<img src='https://github.com/hector4213/hector4213/blob/main/icons/rails.png' height='100'>]() [<img src='https://img.icons8.com/color/344/postgreesql.png' height='100'>]() [<img src='https://img.icons8.com/color/344/javascript.png' height='100'>]() 
 
 
 ## Deployment
