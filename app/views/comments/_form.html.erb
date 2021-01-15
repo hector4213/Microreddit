@@ -1,9 +1,11 @@
-<%= form_with model: [ @post, @post.comments.build ] do |form| %>
-  <div class='form-group'>
-    <%= form.text_area :body, class: "form-control" %>
-  </div>
-</p>
-<p>
-  <%= form.submit "submit", class: "btn btn-primary" %>
-</p>
+<div class="comment-form-container">
+  <%= form_with model: [ @post, @post.comments.build ] do |form| %>
+    <div class='form-group'>
+      <%= form.text_area :body, class: "nes-textarea" %>
+    </div>
+  </p>
+  <p>
+    <%= form.submit "submit", class: "nes-btn is-success" %>
+  </p>
 <% end %>
+</div>
