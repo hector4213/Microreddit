@@ -5,6 +5,7 @@
   </div>
   <div class="buttons-container">
     <% if logged_in? %>
+      <%= link_to "New Post", new_post_path, class: "nes-btn is-warning" %>
       <%= link_to "Profile", user_path(current_user.id), class: "nes-btn is-primary" %>
       <%= link_to "Log out", logout_path, class: "nes-btn is-error", method: :delete %>
     <% else %>
