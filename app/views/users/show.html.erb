@@ -1,8 +1,20 @@
-<div class="container d-flex flex-column space-around">
-  <h3>
-    <%= @user.username %>
-  </h3>
-  <hr/>
+<div class="nes-container profile-container">
+  <section class="message-list">
+    <section class="message -left">
+      <i class="nes-bcrikko"></i>
+      <!-- Balloon -->
+      <div class="nes-balloon from-left">
+        <p>Hola, <%=@user.username%></p>
+      </div>
+    </section>
+    <section class="message -right">
+      <!-- Balloon -->
+      <div class="nes-balloon from-right">
+        <p>See your stats below, dont forget to post!</p>
+      </div>
+      <i class="nes-bcrikko"></i>
+    </section>
+  </section>
   <h6>Total Points: 
     <mark><%= @user.vote_points.to_s%></mark>
   </h6>
