@@ -54,3 +54,13 @@
   text-align: center;
 }
 
+.signup-container {
+  display:flex;
+  flex-direction:column;
+  padding: 25px;
+}
+
+.new-post {
+  display:flex;
+  flex-direction:column;
+}
