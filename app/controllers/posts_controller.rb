@@ -5,16 +5,18 @@ class PostsController < ApplicationController
   PER_PAGE = 10
 
   def index
+    @page = params[:page].to_i ||= 0
+
     if params[:sort] == "recent"
-    @posts = Post.order(created_at: :desc).limit(PER_PAGE)
+    @posts = Post.offset(@page * PER_PAGE).limit(PER_PAGE).order(created_at: :desc).limit(PER_PAGE)
     elsif
       params[:sort] == "top"
-      @posts = Post.limit(PER_PAGE).sort { |a, b| b.vote_points <=> a.vote_points  }
+      @posts = Post.offset(@page * PER_PAGE).limit(PER_PAGE).sort { |a, b| b.vote_points <=> a.vote_points  }
     elsif 
       params[:sort] == "hot"
-      @posts = Post.limit(PER_PAGE).order(created_at: :desc).sort { |a, b| b.vote_points <=> a.vote_points  }
+      @posts = Post.offset(@page * PER_PAGE).limit(PER_PAGE).order(created_at: :desc).sort { |a, b| b.vote_points <=> a.vote_points  }
     else
-      @posts = Post.limit(PER_PAGE).order(created_at: :asc).sort { |a, b| b.vote_points <=> a.vote_points  }
+      @posts = Post.offset(@page * PER_PAGE).limit(PER_PAGE).order(created_at: :asc).sort { |a, b| b.vote_points <=> a.vote_points  }
     end
   end
 
