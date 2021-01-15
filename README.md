@@ -36,7 +36,7 @@ Users of Micro reddit have:
 
 ## Technologies Used
 
-[<img src='https://github.com/hector4213/hector4213/blob/main/icons/ruby.png' height='100'>]() [<img src='https://github.com/hector4213/hector4213/blob/main/icons/rails.png' height='100'>]() [<img src='https://img.icons8.com/color/344/postgreesql.png' height='100'>]() [<img src='https://img.icons8.com/color/344/javascript.png' height='100'>]() 
+[<img src='https://github.com/hector4213/hector4213/blob/main/icons/ruby.png' height='100'>]() [<img src='https://github.com/hector4213/hector4213/blob/main/icons/rails.png' height='100'>]() [<img src='https://img.icons8.com/color/344/postgreesql.png' height='100'>]() [<img src='https://img.icons8.com/color/344/javascript.png' height='100'>]() [<img src='https://user-images.githubusercontent.com/5305599/49061716-da649680-f254-11e8-9a89-d95a7407ec6a.png' height='100'>]() 
 
 
 ## Deployment
