@@ -30,9 +30,7 @@
       <%= yield %>
     </div>
     <div class="side-bar">
-      <% if current_user  %>
-        <%= link_to "New Post", new_post_path, class: "nes-btn is-warning" %>
-      <% elsif params[:controller] == 'posts' %>
+      <% if !current_user  %>
         <%= render template: 'sessions/new' %>
       <% else %>
         <%nil%>
