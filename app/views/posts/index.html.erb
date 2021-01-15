@@ -3,5 +3,7 @@
     <%= render 'post', post: post %>
   <% end %>
   <div class="nes-container page-buttons">
+    <%= link_to "Prev", posts_path(page: @page - 1), class:"nes-btn" %>
+    <%= link_to "Next", posts_path(page: @page + 1), class:"nes-btn" %>
   </div>
 </div>
