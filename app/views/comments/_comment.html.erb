@@ -9,8 +9,7 @@
       <%end%>
     </div>
     <div class="comment-user">
-      <span class="nes-text is-warning">
-        <%= comment.user.username %></span>
+      <%= link_to "#{comment.user.username }", user_path(comment.user), class:"nes-text is-warning"%>
       <span id="comment_<%= comment.id %>">
         <%= comment.vote_points %> points
       </span> <span>
