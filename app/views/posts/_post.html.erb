@@ -1,20 +1,22 @@
-<div class="list-group-item list-group-item-primary d-flex align-items-center">
-  <div class="d-flex flex-column me-4">
+<div class="post-container nes-container">
+  <div class="votes-container">
     <%= link_to vote_post_path(post, vote: true), method: 'post', remote: true do %>
-      <i class="fas fa-sort-up"></i>
+      <i class="nes-icon is-small heart"></i>
     <%end%>
     <span id="post_<%= post.id %>">
       <%= post.vote_points %>
     </span>
     <%= link_to vote_post_path(post, vote: false), method: 'post', remote: true do %>
-      <i  class="fas fa-sort-down"></i>
+      <i  class="nes-icon is-small heart is-transparent"></i>
     <%end%>
   </div>
-  <div>
+  <div class="post-title">
     <%= link_to post.title, post %>
     <small>
       <%= URI.parse(post.url).host %>
     </small>
-    <p class="m-0" >Posted <%= time_ago_in_words(post.created_at) %> ago by <%= post.user.username %> <%= link_to("#{post.comments.size} comments", post_path(post)) %></p>
+    <small>
+      Posted <%= time_ago_in_words(post.created_at) %> ago by <%= link_to "#{post.user.username}", user_path(post.user)%> <%= link_to("#{post.comments.size} comments", post_path(post), class: "is-icon") %>
+    </small>
   </div>
 </div>
