@@ -7,7 +7,6 @@ class PostsController < ApplicationController
   def index
     @page = params[:page].to_i ||= 0
     @num_pages = (Post.all.size.to_f / PER_PAGE).ceil
-    reset_page
     if params[:sort] == "recent"
     @posts = Post.offset(@page * PER_PAGE).limit(PER_PAGE).reorder(created_at: :desc).limit(PER_PAGE)
     elsif
@@ -19,6 +18,16 @@ class PostsController < ApplicationController
     else
       @posts = Post.offset(@page * PER_PAGE).limit(PER_PAGE).reorder(created_at: :asc).sort { |a, b| b.vote_points <=> a.vote_points  }
     end
+  end
+
+  def search  
+    if params[:search].blank?  
+      flash[:notice] = "Please enter something..."
+      redirect_to root_path
+    else  
+      @parameter = params[:search].downcase 
+      @results = Post.all.where("lower(title) LIKE ?", "%" + @parameter + "%")  
+    end  
   end
 
   
