@@ -5,7 +5,7 @@ Rails.application.routes.draw do
   post   '/login',   to: 'sessions#create'
   delete '/logout',  to: 'sessions#destroy'
   get '/signup', to: 'users#new'
-  get '/search', to:'posts#search'
+  get '/search', to: 'posts#search', :as => 'search_page'
 
   
 
