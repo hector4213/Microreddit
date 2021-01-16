@@ -7,7 +7,7 @@ class SessionsController < ApplicationController
       log_in user
       redirect_to root_path
     else
-      flash.now[:danger] = 'Invalid Login, try again..'
+      flash[:notice] = 'Invalid Login, try again..'
       render :new
     end
   end
