@@ -1,6 +1,6 @@
 # Ninteddit 🎮  
-
-A minaturized version of reddit on rails, nintendo style.
+[Heroku](https://pyheroku-badge.herokuapp.com/?app=ninteddit&path=/api&style=plastic)
+A minaturized version of reddit on rails, nintendo style. Check it out [https://ninteddit.herokuapp.com/](here)
 
 ## Table of contents
 
