@@ -4,10 +4,10 @@
     <i class="nes-icon reddit is-large"></i>
   </div>
   <div class="search-container">
-    <%= form_with url: "/search", method: :get do |form| %>
-      <%= form.label :query, "search:" %>
-      <%= form.text_field :query %>
-      <%= form.submit "Search", class: %>
+    <%= form_tag(search_page_path, method: :get,   
+    class: 'search-form') do %>
+      <%= search_field_tag :search, params[:search], placeholder: "Enter Title", class: "nes-input" %>
+      <%= button_tag "search", :class => 'search-btn nes-btn',:name => nil%>
     <% end %>
   </div>
   <div class="buttons-container">
