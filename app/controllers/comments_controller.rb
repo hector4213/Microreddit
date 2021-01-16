@@ -7,9 +7,9 @@ class CommentsController < ApplicationController
         @comment.save
         redirect_to post_path(@post)
     end
-    
+
     def edit
-        @comment = Comment.find(params[:comment_id])
+        @comment = Comment.find(params[:id])
         @post = Post.find(@comment.post_id)
     end
 
