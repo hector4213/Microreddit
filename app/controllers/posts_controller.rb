@@ -5,7 +5,7 @@ class PostsController < ApplicationController
   PER_PAGE = 10
 
   def index
-    @page = params[:page].to_i ||= 0
+    @page = params[:page].to_i < 0 ? 0 : params[:page].to_i
     @num_pages = (Post.all.size.to_f / PER_PAGE).ceil
     if params[:sort] == "recent"
     @posts = Post.offset(@page * PER_PAGE).limit(PER_PAGE).reorder(created_at: :desc).limit(PER_PAGE)
