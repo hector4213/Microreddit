@@ -1,7 +1,14 @@
 <nav class="nes-container nav-container">
   <div class>
     <%= link_to "Ninteddit", root_path, class: "navbar-brand" %>
-    <i class="nes-icon reddit is-small"></i>
+    <i class="nes-icon reddit is-large"></i>
+  </div>
+  <div class="search-container">
+    <%= form_tag(search_page_path, method: :get,   
+    class: 'search-form') do %>
+      <%= search_field_tag :search, params[:search], placeholder: "Enter Title", class: "nes-input" %>
+      <%= button_tag "search", :class => 'search-btn nes-btn',:name => nil%>
+    <% end %>
   </div>
   <div class="buttons-container">
     <% if logged_in? %>
