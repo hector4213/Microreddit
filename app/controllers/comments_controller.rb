@@ -11,6 +11,15 @@ class CommentsController < ApplicationController
     def edit
         @comment = Comment.find(params[:id])
         @post = Post.find(@comment.post_id)
+        respond_to do |format|
+            format.js
+        end
+    end
+
+    def update
+        @comment = Comment.find(params[:id])
+        @comment.update(post_id: params[:comment][:post_id], user_id: current_user.id, body: params[:comment][:body])
+        flash[:notice] = "Comment Updated!"
     end
 
 
