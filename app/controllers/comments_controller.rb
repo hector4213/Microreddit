@@ -1,5 +1,5 @@
 class CommentsController < ApplicationController
-    before_action :set_post_comment
+    # before_action :set_post_comment
 
     def create
         @post = Post.find(params[:post_id])
