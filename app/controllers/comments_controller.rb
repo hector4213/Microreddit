@@ -1,4 +1,5 @@
 class CommentsController < ApplicationController
+    before_action :set_post_comment
 
     def create
         @post = Post.find(params[:post_id])
@@ -18,8 +19,9 @@ class CommentsController < ApplicationController
 
     def update
         @comment = Comment.find(params[:id])
-        @comment.update(post_id: params[:comment][:post_id], user_id: current_user.id, body: params[:comment][:body])
+        @comment.update(comment_params)
         flash[:notice] = "Comment Updated!"
+        redirect_to @post
     end
 
 
@@ -44,5 +46,10 @@ class CommentsController < ApplicationController
     def comment_params
         params.require(:comment).permit(:user, :body, :user_id)
     end
+    def set_post_comment
+        @comment = Comment.find(params[:id])
+        @post = Post.find(@comment.post_id)
+      end
+    
 
 end
