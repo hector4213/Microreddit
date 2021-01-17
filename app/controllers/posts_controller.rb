@@ -1,6 +1,6 @@
 class PostsController < ApplicationController
   before_action :logged_in_user
-  before_action :set_post, only: [:show, :vote]
+  before_action :set_post, only: [:show, :vote, :edit, :update]
 
   PER_PAGE = 10
 
