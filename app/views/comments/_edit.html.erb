@@ -1,23 +1,17 @@
-<div class="comment-container nes-container is-rounded">
-  <div class=comment-header>
-    <div class="comment-user">
-      <%= link_to "#{comment.user.username }", user_path(comment.user), class:"nes-text is-warning"%>
-      <span id="comment_<%= comment.id %>">
-        <%= comment.vote_points %> points
-      </span> <span>
-        <%= time_ago_in_words(comment.created_at) %>
-      </span>
-    </div>
+<div class=comment-header>
+  <div class="comment-user">
+    <%= link_to "#{comment.user.username }", user_path(comment.user), class:"nes-text is-warning"%>
+    <span id="comment_<%= comment.id %>">
+      <%= comment.vote_points %> points
+    </span> <span>
+      <%= time_ago_in_words(comment.created_at) %>
+    </span>
   </div>
-  <div>
-    <%= form_with model: [ @post, @post.comments.build ] do |form| %>
-      <div class='form-group'>
-        <%= form.text_area :body, class: "nes-textarea" %>
-      </div>
-    </p>
+</div>
+<div>
+  <%= form_for([@post, @comment]) do |f| %>
+    <%= f.text_field :body, class: "nes-textarea" %>
     <p>
-      <%= form.submit "update", class: "nes-btn is-success" %>
+      <%= f.submit "Update", class: "nes-btn is-primary"%>
     <%end%>
-  </p>
-</div>
-</div>
+  </div>
