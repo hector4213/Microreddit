@@ -31,6 +31,13 @@ module SessionsHelper
     session[:forwarding_url] = request.original_url if request.get?
   end
 
+  def require_user
+    unless logged_in?
+      flash[:notice] = "Must be logged in to do that."
+      redirect_to root_path
+    end
+  end
+
 
   private
   def logged_in_user
