@@ -19,7 +19,7 @@
   </div>
   <div id="comment_<%=comment.id %>">
     <%= comment.body%>
-    <% if current_user.id == comment.user_id %>
+    <% if logged_in? && current_user.id == comment.user_id %>
       <%= link_to 'Delete', [comment.post, comment], class: "nes-btn is-error",
                method: :delete,
                data: { confirm: "Are you sure?" } %>
