@@ -7,7 +7,6 @@ Rails.application.routes.draw do
   get '/signup', to: 'users#new'
   get '/posts/search', to: 'posts#search', :as => 'search_page'
 
-  
   resources :posts do
     member do
       post :vote
