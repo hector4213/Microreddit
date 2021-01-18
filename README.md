@@ -8,6 +8,7 @@ A minaturized version of reddit on rails, nintendo style. Check it out [here](ht
 
 - [Table of contents](#table-of-contents)
   - [Features](#features)
+  - [Screenshots](#Screenshots)
   - [Tech](#technologies-used)
   - [Deployment](#deployment)
   - [ERD](#entity-relationship-diagram)
@@ -35,6 +36,10 @@ Users of Micro reddit have:
 - Profiles they can update
 
 - Profiles show total posts made and total points for their posts.
+
+## Screenshots
+
+Screens go here.
 
 ## Technologies Used
 
