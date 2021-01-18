@@ -10,15 +10,15 @@ class PostsController < ApplicationController
     @num_pages = (Post.all.size.to_f / PER_PAGE).ceil
     set_limit
     if params[:sort] == "recent"
-    @posts = Post.offset(@page * PER_PAGE).limit(PER_PAGE).reorder(created_at: :desc).limit(PER_PAGE)
+    @posts = Post.offset(@page * PER_PAGE).limit(PER_PAGE).where(created_at: :desc).limit(PER_PAGE)
     elsif
       params[:sort] == "top"
       @posts = Post.offset(@page * PER_PAGE).limit(PER_PAGE).sort { |a, b| b.vote_points <=> a.vote_points  }
     elsif 
       params[:sort] == "hot"
-      @posts = Post.offset(@page * PER_PAGE).limit(PER_PAGE).reorder(created_at: :desc).sort { |a, b| b.vote_points <=> a.vote_points  }
+      @posts = Post.offset(@page * PER_PAGE).limit(PER_PAGE).where(created_at: :desc).sort { |a, b| b.vote_points <=> a.vote_points  }
     else
-      @posts = Post.offset(@page * PER_PAGE).limit(PER_PAGE).reorder(created_at: :asc).sort { |a, b| b.vote_points <=> a.vote_points  }
+      @posts = Post.offset(@page * PER_PAGE).limit(PER_PAGE).where(created_at: :asc).sort { |a, b| b.vote_points <=> a.vote_points  }
     end
   end
 
