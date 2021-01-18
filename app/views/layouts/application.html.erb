@@ -30,8 +30,8 @@
     <main class="index-container">
       <%= yield %>
     </div>
-    <div class="side-bar">
-      <% if !current_user  %>
+    <% unless logged_in?  %>
+      <div class="side-bar nes-container">
         <%= render template: 'sessions/new' %>
       <% else %>
         <%nil%>
