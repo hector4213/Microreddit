@@ -1,12 +1,14 @@
 class PostsController < ApplicationController
   before_action :logged_in_user
   before_action :set_post, only: [:show, :vote, :edit, :update]
+  before_action :require_user, except: [:index, :show]
 
   PER_PAGE = 10
 
   def index
     @page = params[:page].to_i < 0 ? 0 : params[:page].to_i
     @num_pages = (Post.all.size.to_f / PER_PAGE).ceil
+    set_limit
     if params[:sort] == "recent"
     @posts = Post.offset(@page * PER_PAGE).limit(PER_PAGE).reorder(created_at: :desc).limit(PER_PAGE)
     elsif
@@ -97,5 +99,10 @@ class PostsController < ApplicationController
     @post = Post.find(params[:id])
   end
 
+  def set_limit
+    if @page > @num_pages
+      @page = @num_pages
+    end
+  end
 
 end
