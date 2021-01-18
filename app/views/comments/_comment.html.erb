@@ -12,8 +12,11 @@
       <%= link_to "#{comment.user.username }", user_path(comment.user), class:"nes-text is-warning"%>
       <span id="comment_<%= comment.id %>">
         <%= comment.vote_points %> points
-      </span> <span>
-        <%= time_ago_in_words(comment.created_at) %>
+      </span>
+      <span>
+        <small>
+          <%= "#{time_ago_in_words(comment.created_at)} ago"%>
+        </small>
       </span>
     </div>
   </div>
