@@ -3,6 +3,9 @@
   <h2><%= @post.comments.size %> Comments</h2>
   <h2>Leave a comment:</h2>
   <%= render 'comments/form' %>
+  <div class ="sort-comments">
+    <%# putheader here %>
+  </div>
   <% @post.comments.select { |comment| comment.created_at }.each do |comment| %>
     <%= render 'comments/comment', comment: comment %>
   <% end %>
