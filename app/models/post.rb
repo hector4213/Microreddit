@@ -5,4 +5,7 @@ class Post < ApplicationRecord
   has_many :votes, as: :voteable
   validates :title, presence: true, length: { minimum: 4 }
   validates :url, presence: true, length: { minimum: 6 }
+
+  scope :recent, -> {where(created_at: :desc)}
+
 end
