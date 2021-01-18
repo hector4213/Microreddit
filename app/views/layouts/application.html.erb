@@ -27,7 +27,7 @@
       <% end %>
     </div>
     <%= render 'layouts/nav' %>
-    <main class="index-container">
+    <section class="index-container">
       <%= yield %>
     </div>
     <% unless logged_in?  %>
@@ -38,6 +38,6 @@
       <%end%>
     </div>
   </div>
-</main>
+</section>
 </body>
 </html>
