@@ -8,7 +8,7 @@ class PostsController < ApplicationController
   def index
     @page = (params[:page] || 1).to_i
     @total_pages = (Post.all.size.to_f / PER_PAGE).ceil
-    # set_limit
+    set_limit
     if params[:sort] == "recent"
     @posts = Post.offset((@page - 1)* PER_PAGE).limit(PER_PAGE).order(created_at: :desc).limit(PER_PAGE)
     elsif
@@ -107,8 +107,13 @@ class PostsController < ApplicationController
   end
 
   def set_limit
-    if @page > @num_pages
-      @page = @num_pages
+    if @page <= 1
+      @page = 1
+    elsif
+      @page >= @total_pages
+      @page = @total_pages
+    else
+      @page = params[:page].to_i
     end
   end
 
