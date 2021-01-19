@@ -37,7 +37,6 @@ class PostsController < ApplicationController
     @post = Post.find(params[:id])
     if  params[:sort_param] == 'new'
       @comments = @post.comments.sort{|a,b| b.created_at <=> a.created_at}
-      puts @comments
       else
       params[:sort_param] == 'top'
       @comments = @post.comments.sort { |a, b| b.vote_points <=> a.vote_points  }
