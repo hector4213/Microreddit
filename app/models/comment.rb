@@ -5,7 +5,5 @@ class Comment < ApplicationRecord
   has_many :votes, as: :voteable
   has_many :comment, :class_name => "Comment", :foreign_key => "parent_id"
 
-
-
   validates :body, presence: true
 end
