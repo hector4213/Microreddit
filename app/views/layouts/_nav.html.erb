@@ -1,11 +1,11 @@
 <div class="sorter-header">
-  <%= link_to posts_path(sort: "hot"), class: "nes-badge" do %>
+  <%= link_to posts_path(sort: "hot", page: 1), class: "nes-badge" do %>
     <span class="is-error">Hot</span>
   <%end%>
-  <%= link_to posts_path(sort: "top"), class: "nes-badge" do %>
+  <%= link_to posts_path(sort: "top", page:1), class: "nes-badge" do %>
     <span class="is-dark">Top</span>
   <%end%>
-  <%= link_to posts_path(sort: "recent"), class: "nes-badge" do %>
+  <%= link_to posts_path(sort: "recent", page: 1), class: "nes-badge" do %>
     <span class="is-success">New</span>
   <%end%>
 </div>
