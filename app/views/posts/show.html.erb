@@ -4,9 +4,10 @@
   <h2>Leave a comment:</h2>
   <%= render 'comments/form' %>
   <div class ="sort-comments">
-    <%# putheader here %>
+    <%= link_to 'new', post_path( @post, sort_param: 'new'), class: 'nes-btn' %>
+    <%= link_to 'top', post_path(@post, sort_param: 'top'), class: 'nes-btn' %>
   </div>
-  <% @post.comments.select { |comment| comment.created_at }.each do |comment| %>
+  <% @comments.each do |comment| %>
     <%= render 'comments/comment', comment: comment %>
   <% end %>
 </div>
