@@ -1,4 +1,4 @@
-<div id="comment_<%=comment.id %>" class="comment-container nes-container is-rounded">
+<div  class="comment-container nes-container is-rounded">
   <div class=comment-header>
     <div class="votes-container">
       <%= link_to vote_post_comment_path(comment.post, comment, vote: true), method: 'post', remote: true do %>
@@ -10,7 +10,7 @@
     </div>
     <div class="comment-user">
       <%= link_to "#{comment.user.username }", user_path(comment.user), class:"nes-text is-warning"%>
-      <span id="comment_<%= comment.id %>">
+      <span id="comment_vote<%= comment.id %>">
         <%= comment.vote_points %> points
       </span>
       <span>
@@ -20,7 +20,7 @@
       </span>
     </div>
   </div>
-  <div id="comment_<%=comment.id %>">
+  <div id="comment_edit<%=comment.id %>">
     <%= comment.body%>
     <% if logged_in? && current_user.id == comment.user_id %>
       <%= link_to 'Delete', [comment.post, comment], class: "nes-btn is-error",
