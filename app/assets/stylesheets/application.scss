@@ -126,4 +126,17 @@
     flex-direction: column-reverse;
   }
 
+  .navbar-brand {
+    display:none;
+  }
+
+  .search-form {
+    flex-direction:column;
+  }
+
+  .buttons-container {
+    display:flex;
+    flex-direction:column;
+  }
+
   }
