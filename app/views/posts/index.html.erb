@@ -1,11 +1,11 @@
-<div class="container">
+<div class="all-posts-container">
   <% @posts.each do |post| %>
     <%= render 'post', post: post %>
   <% end %>
   <div class="nes-container page-buttons">
     <%= link_to "Prev", posts_path(page: @page - 1), class:"nes-btn" %>
     <div class="page-nums">
-      <% @num_pages.times do |n| %>
+      <% @total_pages.times do |n| %>
         <% if params[:offset].to_s == (n * 10).to_s || n == 0 && params[:offset].nil? %>
           <span><%= n + 1 %></span>
         <% else %>
