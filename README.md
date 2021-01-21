@@ -1,4 +1,7 @@
-# Ninteddit 🎮  
+ <p align="center">
+ [<img src='/images/header.png' height='100'>]() 
+ </p>
+
 
 ![Heroku](https://pyheroku-badge.herokuapp.com/?app=ninteddit&style=plastic)
 
