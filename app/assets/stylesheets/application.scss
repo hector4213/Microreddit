@@ -88,6 +88,10 @@
   padding: 10px;
 }
 
+.post-title {
+  overflow:hidden;
+}
+
 .comment-container {
   display:flex;
   flex-direction:column;
