@@ -55,5 +55,5 @@ Screens go here.
 By default Rails ships with SQLite3, personal preference made me change the dialect to Postgres
 
 <p align="center">
-<img src='/images/microerd.png' />
+<img src='/images/erd.png' />
  </p>
