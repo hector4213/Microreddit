@@ -20,12 +20,11 @@
 .index-container {
   display:flex;
   width: 100%;
-  align-items: center;
   justify-content: center;
 }
 
 .all-posts-container {
-  width:100%;
+  flex-grow: 1;
 }
 
 
@@ -159,10 +158,12 @@
 
   .post-container {
     max-width: 375px;
+    margin:0 auto;
   }
 
   .index-container {
     flex-direction: column-reverse;
+    align-items: center;
   }
 
   .navbar-brand {
@@ -176,6 +177,20 @@
   .buttons-container {
     display:flex;
     flex-direction:column;
+  }
+
+
+  .nav-container {
+    margin: 0 auto;
+  }
+
+  .leave-comment-header {
+    margin: 0 auto;
+    max-width: 375px;
+  }
+
+  .leave-text-header {
+    text-align: center;
   }
 
   }
