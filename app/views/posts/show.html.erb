@@ -1,8 +1,10 @@
 <div class="post-comments-container">
   <%= render 'post', post: @post %>
-  <h2><%= @post.comments.size %> Comments</h2>
-  <h2>Leave a comment:</h2>
-  <%= render 'comments/form' %>
+  <div class="leave-comment-header">
+    <h2><%= @post.comments.size %> Comments</h2>
+    <h2 class='leave-header'>Leave a comment:</h2>
+    <%= render 'comments/form' %>
+  </div>
   <div class ="sort-comments">
     <%= link_to 'new', post_path( @post, sort_param: 'new'), class: 'nes-btn' %>
     <%= link_to 'top', post_path(@post, sort_param: 'top'), class: 'nes-btn' %>
