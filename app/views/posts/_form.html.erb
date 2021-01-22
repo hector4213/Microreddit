@@ -1,18 +1,15 @@
-<div class="new-post">
-  <h1 class='header-center'> New Micropost </h1>
-  <%= form_with model: @post do |form| %>
-    <%= form.label :title, class:'form-label' %><br>
-    <%= form.text_field :title, class: "nes-input" %>
-    <% @post.errors.full_messages_for(:title).each do |message| %>
-      <div>
-        <%= message %>
-      </div>
-    <%end%>
-    <%= form.label :url, class: 'form-label' %>
-    <%= form.text_field :url, class: 'nes-input' %>
-    <% @post.errors.full_messages_for(:url).each do |message| %>
+<%= form_with model: @post do |form| %>
+  <%= form.label :title, class:'form-label' %><br>
+  <%= form.text_field :title, class: "nes-input" %>
+  <% @post.errors.full_messages_for(:title).each do |message| %>
+    <div>
       <%= message %>
-    <% end %>
-    <%= form.submit 'Post', class: "btn btn-primary" %>
+    </div>
+  <%end%>
+  <%= form.label :url, class: 'form-label' %>
+  <%= form.text_field :url, class: 'nes-input' %>
+  <% @post.errors.full_messages_for(:url).each do |message| %>
+    <%= message %>
   <% end %>
-</div>
+  <%= form.submit 'Post', class: "nes-btn is-success" %>
+<% end %>
