@@ -1,13 +1,13 @@
 <%= form_with model: @post do |form| %>
   <%= form.label :title, class:'form-label' %><br>
-  <%= form.text_field :title, class: "nes-input" %>
+  <%= form.text_field :title, placeholder:"Enter your title here...", class: "nes-input" %>
   <% @post.errors.full_messages_for(:title).each do |message| %>
     <div>
       <%= message %>
     </div>
   <%end%>
   <%= form.label :url, class: 'form-label' %>
-  <%= form.text_field :url, class: 'nes-input' %>
+  <%= form.text_field :url, placeholder: "Enter an article URL here...", class: 'nes-input' %>
   <% @post.errors.full_messages_for(:url).each do |message| %>
     <%= message %>
   <% end %>
