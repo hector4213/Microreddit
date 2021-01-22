@@ -54,6 +54,15 @@ Users have the ability to vote on both posts and comments
     <img src="/images/voting.gif"</img>
 </div>
 
+### Searching posts
+
+Posts can be search by title
+
+<div align="center">
+    <img src="/images/search.gif"</img>
+</div>
+
+
 
 
 Thanks to the simplicity and magic of Ruby on Rails, users of Micro reddit can:
