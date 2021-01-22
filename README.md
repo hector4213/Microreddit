@@ -22,6 +22,10 @@ A minaturized version of reddit on rails, nintendo style. Check it out [here](ht
 
 ## Features
 
+### User Accounts and Registration
+[<img src='/images/homepage' height='200px'>]()
+
+
 Thanks to the simplicity and magic of Ruby on Rails, users of Micro reddit can:
 
 - Register and login
