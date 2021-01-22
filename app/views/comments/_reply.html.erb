@@ -1,0 +1,8 @@
+ 
+<div class="reply-form-container">
+  <%= form_for [comment.post, Comment.new] do |f| %>
+    <%= f.hidden_field :parent_id, value: comment.id %>
+    <%= f.text_area :body, placeholder: "Enter a reply...",class: "nes-textarea comment-btn" %>
+    <%= f.submit "Reply", class: "nes-btn is-primary comment-btn" %>
+  <% end %>
+</div>
