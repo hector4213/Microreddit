@@ -1,1 +1,13 @@
-<%= render "form", post: @post %>
+<div class="new-post">
+  <div section class="nes-container is-rounded">
+    <h1 class='header-center'> New Ninteddit Post <i class="nes-logo"></i> </h1>
+    <div class="new-post-container">
+      <%= render "form", post: @post %>
+      <div>
+        <section class="message -left">
+          <div class="nes-balloon from-left">
+            <p>Whats up <%= current_user.username %> enter your title and post an article!</p>
+          </div>
+        </section>
+        <i class="nes-octocat animate"></i>
+      </div>
