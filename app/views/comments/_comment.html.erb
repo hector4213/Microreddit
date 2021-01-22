@@ -22,15 +22,15 @@
   </div>
   <div id="comment_edit<%=comment.id %>">
     <%= comment.body%>
-    <%= render 'comments/reply', comment: comment %>
-    <div class="comment-btns">
-      <% if logged_in? && current_user.id == comment.user_id %>
-        <%= link_to 'Delete', [comment.post, comment], class: "nes-btn is-error comment-btn",
+    <div class="comment-reply-container">
+      <%= render 'comments/reply', comment: comment %>
+    </div>
+    <% if logged_in? && current_user.id == comment.user_id %>
+      <%= link_to 'Delete', [comment.post, comment], class: "nes-btn is-error comment-btn",
                method: :delete,
                data: { confirm: "Are you sure?" } %>
-        <%= link_to "Edit", edit_post_comment_path(comment.post, comment), class:'nes-btn is-warning comment-btn', remote: true %>
-      <% end%>
-    </div>
+      <%= link_to "Edit", edit_post_comment_path(comment.post, comment), class:'nes-btn is-warning comment-btn', remote: true %>
+    <% end%>
   </div>
   <div class="sub-comment">
     <% comment.replies.each do |reply| %>
