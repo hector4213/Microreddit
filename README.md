@@ -23,7 +23,37 @@ A minaturized version of reddit on rails, nintendo style. Check it out [here](ht
 ## Features
 
 ### User Accounts and Registration
-[<img src='/images/homepage' height='200px'>]()
+
+Users can signup, with a unique username and email, password are hashed with bcrypt and stored in the database.
+
+<div align="center">
+    <img src="/images/homepage.png"</img>
+</div>
+
+### Commenting
+
+Comments are a great way for users to interact, replying to other users comments enhances user interaction even more.
+
+<div align="center">
+    <img src="/images/nestedcomment.png"</img>
+</div>
+
+### Profile and statistics
+
+A User profile shows their account creation date , post count as well as points.
+
+<div align="center">
+    <img src="/images/profile.png"</img>
+</div>
+
+### Voting
+
+Users have the ability to vote on both posts and comments
+
+<div align="center">
+    <img src="/images/voting.gif"</img>
+</div>
+
 
 
 Thanks to the simplicity and magic of Ruby on Rails, users of Micro reddit can:
@@ -38,9 +68,6 @@ Thanks to the simplicity and magic of Ruby on Rails, users of Micro reddit can:
 
 - Post links to external URL's (like reddit)
 
-Users of Micro reddit have:
-
-- Profiles they can update
 
 - Profiles show total posts made and total points for their posts.
 
